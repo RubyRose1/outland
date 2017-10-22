@@ -77,7 +77,7 @@ header img{
     align-items: center;
     justify-content: center;
 }
-.big-circle, .small-circle, .play-circle{
+.big-circle, .small-circle, .small-circle1, .small-circle2, .play-circle{
     box-shadow: -1px 1px 33px -8px rgba(0,0,0,0.79);
 }
 .big-circle{
@@ -135,6 +135,25 @@ header img{
     background-color: #fff;
     z-index: 100;
 }
+
+.small-circle1{
+    position: absolute;
+    padding: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 100;
+}
+
+.small-circle2{
+    position: absolute;
+    padding: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: 100;
+}
+
+
+
 .play-circle{
     cursor: pointer;
     display: flex;
@@ -215,8 +234,22 @@ svg{
         width: 350px;
         height: 350px;
     }
+    .small-circle1{
+        width: 350px;
+        height: 350px;
+    }
+    .small-circle2{
+        width: 350px;
+        height: 350px;
+    }
     .small-circle img{
-      display: none;
+        display: none;
+    }
+    .small-circle1 img{
+        display: none;
+    }
+    .small-circle2 img{
+        display: none;
     }
     .menu{
         display: none;
@@ -231,8 +264,138 @@ svg{
         width: 250px;
         height: 250px;
     }
-    x
+
+    .small-circle1{
+        width: 250px;
+        height: 250px;
+    }
+
+    .small-circle2{
+        width: 250px;
+        height: 250px;
+    }
+
     .text, .text1, .text2{
         font-size: 0.4em;
     }
+}
+
+.animated-wheel-container {
+    position: relative;
+    width: 814px;
+    height: 814px;
+    margin: 0 auto;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+.outer-little-stroke {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 727px;
+    height: 727px;
+    border-radius: 50%;
+    background: url(images/outerLittleStroke.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#51bcfb), to(#8648e6));
+    background: url(images/outerLittleStroke.png) no-repeat top center, linear-gradient(to bottom left, #51bcfb, #8648e6);
+    background-size: 100% 100%;
+}
+/* Анимации для outer-little-stroke*/
+.ols-phase1 {
+    -webkit-animation-name: rotateOuterLittleStroke1;
+    animation-name: rotateOuterLittleStroke1;
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    background: url(images/outerLittleStroke.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#63d4a7), to(#474cda));
+    background: url(images/outerLittleStroke.png) no-repeat top center, linear-gradient(to bottom left, #63d4a7, #474cda);
+    background-size: 100% 100%;
+}
+.ols-phase2 {
+    -webkit-animation-name: rotateOuterLittleStroke2;
+    animation-name: rotateOuterLittleStroke2;
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    background: url(images/outerLittleStroke.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#f485af), to(#4e43ce));
+    background: url(images/outerLittleStroke.png) no-repeat top center, linear-gradient(to bottom left, #f485af, #4e43ce);
+    background-size: 100% 100%;
+}
+.ols-phase3 {
+    -webkit-animation-name: rotateOuterLittleStroke3;
+    animation-name: rotateOuterLittleStroke3;
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    background: url(images/outerLittleStroke.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#51bcfb), to(#8648e6));
+    background: url(images/outerLittleStroke.png) no-repeat top center, linear-gradient(to bottom left, #51bcfb, #8648e6);
+    background-size: 100% 100%;
+}
+.inner-little-stroke {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 661px;
+    height: 661px;
+    border-radius: 50%;
+    background-color: #fff;
+    background: url(images/outerLittleStroke2.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#51bcfb), to(#8648e6));
+    background: url(images/outerLittleStroke2.png) no-repeat top center, linear-gradient(to bottom left, #51bcfb, #8648e6);
+    background-size: 100% 100%;
+}
+/* Анимации для inner-little-stroke*/
+.ils-phase1 {
+    -webkit-animation-name: rotateOuterLittleStroke1Reverse, rotateInnerLittleStroke1;
+    animation-name: rotateOuterLittleStroke1Reverse, rotateInnerLittleStroke1;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 4s,3s;
+    animation-duration: 4s,3s;
+    background: url(images/outerLittleStroke2.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#63d4a7), to(#474cda));
+    background: url(images/outerLittleStroke2.png) no-repeat top center, linear-gradient(to bottom left, #63d4a7, #474cda);
+    background-size: 100% 100%;
+}
+.ils-phase2 {
+    -webkit-animation-name: rotateOuterLittleStroke2Reverse, rotateInnerLittleStroke2;
+    animation-name: rotateOuterLittleStroke2Reverse, rotateInnerLittleStroke2;
+    -webkit-animation-delay: -1.5s, -0.75s;
+    animation-delay: -1.5s, -0.75s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 3s,1.5s;
+    animation-duration: 3s,1.5s;
+    background: url(images/outerLittleStroke2.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#f485af), to(#4e43ce));
+    background: url(images/outerLittleStroke2.png) no-repeat top center, linear-gradient(to bottom left, #f485af, #4e43ce);
+    background-size: 100% 100%;
+}
+.ils-phase3 {
+    -webkit-animation-name: rotateOuterLittleStroke3Reverse, rotateInnerLittleStroke3;
+    animation-name: rotateOuterLittleStroke3Reverse, rotateInnerLittleStroke3;
+    -webkit-animation-delay: -1s, -0.5s;
+    animation-delay: -1s, -0.5s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 2s, 1s;
+    animation-duration: 2s, 1s;
+    background: url(images/outerLittleStroke2.png) no-repeat top center, -webkit-gradient(linear, right top, left bottom, from(#51bcfb), to(#8648e6));
+    background: url(images/outerLittleStroke2.png) no-repeat top center, linear-gradient(to bottom left, #51bcfb, #8648e6);
+    background-size: 100% 100%;
 }
