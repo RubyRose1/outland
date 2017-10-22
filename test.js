@@ -2,6 +2,7 @@ $(document).ready(
 	function() {
         radialProgressBar();
 	   function radialProgressBar() {
+
            var s = Snap('#animated');
            var progress = s.select('#progress');
 
@@ -16,6 +17,11 @@ $(document).ready(
                            $(".text1").hide();
                            $(".text").show("slow");
                        }
+                        if($(".text2").is(':visible')) {
+                            $(".text2").hide();
+                            $(".text1").show("slow");
+                        }
+
 
                    }
                    progress.attr({'stroke-dasharray': value + ',251.2'});
@@ -25,6 +31,8 @@ $(document).ready(
 
        }
 
+
+
         $(".menu-dropdown").hover(
             function(){
                 $('.drop li').show();
@@ -33,5 +41,9 @@ $(document).ready(
                 $('.drop li').hide();
             });
 
+
+
 });
+
+
 
